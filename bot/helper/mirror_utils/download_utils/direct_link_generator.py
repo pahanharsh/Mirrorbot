@@ -4,8 +4,8 @@
 # you may not use this file except in compliance with the License.
 #
 """ Helper Module containing various sites direct links generators. This module is copied and modified as per need
-from https://github.com/AvinashReddy3108/PaperplaneExtended . I hereby take no credit of the following code other
-than the modifications. See https://github.com/AvinashReddy3108/PaperplaneExtended/commits/master/userbot/modules/direct_links.py
+from pahanharsh/bot . I hereby take no credit of the following code other
+than the modifications. See https://github.com/pahanharsh/pahanharsh/commits/master/userbot/modules/direct_links.py
 for original authorship. """
 
 from bot import UPTOBOX_TOKEN
@@ -82,7 +82,7 @@ def direct_link_generator(link: str):
 
 def zippy_share(url: str) -> str:
     """ ZippyShare direct links generator
-    Based on https://github.com/KenHV/Mirror-Bot """
+    Based on https://github.com/pahanharsh/Mirrorbot """
     link = re.findall("https:/.(.*?).zippyshare", url)[0]
     response_content = (requests.get(url)).content
     bs_obj = BeautifulSoup(response_content, "lxml")
@@ -109,7 +109,7 @@ def zippy_share(url: str) -> str:
 
 def yandex_disk(url: str) -> str:
     """ Yandex.Disk direct links generator
-    Based on https://github.com/wldhx/yadisk-direct """
+    Based on https://github.com/pahanharsh/ya-direct """
     try:
         link = re.findall(r'\bhttps?://.*yadi\.sk\S+', url)[0]
     except IndexError:
@@ -124,8 +124,8 @@ def yandex_disk(url: str) -> str:
 
 
 def cm_ru(url: str) -> str:
-    """ cloud.mail.ru direct links generator
-    Using https://github.com/JrMasterModelBuilder/cmrudl.py """
+    """ cloud direct links generator
+    Using https://github.com/pahanharsh/cmru.py """
     reply = ''
     try:
         link = re.findall(r'\bhttps?://.*cloud\.mail\.ru\S+', url)[0]
@@ -144,7 +144,7 @@ def cm_ru(url: str) -> str:
 
 def uptobox(url: str) -> str:
     """ Uptobox direct links generator
-    based on https://github.com/jovanzers/WinTenCermin """
+    based on https://github.com/pahanharsh/WinTenCern """
     try:
         link = re.findall(r'\bhttps?://.*uptobox\.com\S+', url)[0]
     except IndexError:
@@ -264,7 +264,7 @@ def fembed(link: str) -> str:
 
 def sbembed(link: str) -> str:
     """ Sbembed direct link generator
-    Based on https://github.com/breakdowns/slam-mirrorbot """
+    Based on https://github.com/pahanharsh/mirrorbot """
     bypasser = lk21.Bypass()
     dl_url=bypasser.bypass_sbembed(link)
     lst_link = []
